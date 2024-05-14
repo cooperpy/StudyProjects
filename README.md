@@ -19,4 +19,14 @@ StudyProjects——记录学习过程中的笔记
 - board = [['_'] * 3 for i in range(3)   比较  weird_board = [['_'] * 3] * 3
 - memoryview是一个内置类，它能让用户在不复制内容的情况下操作同一个数组的不同切片
 - collections.deque类（双向队列）是一个线程安全、可以快速从两端添加或者删除元素的数据类型。而且如果想要有一种数据类型来存放“最近用到的几个元素”，deque也是一个很好的选择。这是因为在新建一个双向队列的时候，你可以指定这个队列的大小，如果这个队列满员了，还可以从反向端删除过期的元素，然后在尾端添加新的元素
+
+from collections import deque  # 双端队列
+from queue import Queue, SimpleQueue, LifoQueue, PriorityQueue # 线程安全
+from multiprocessing import Queue, JoinableQueue  # 进程安全
+import heapq  # 堆排序
+
+## 第三章
+- from collections import OrderedDict, ChainMap, Counter
+- 就创造自定义映射类型来说，以UserDict为基类，总比以普通的dict为基类要来得方便
+- 从 Python 3.3 开始，types模块中引入了一个封装类名叫MappingProxyType。如果给这个类一个映射，它会返回一个只读的映射视图。虽然是个只读视图，但是它是动态的。这意味着如果对原映射做出了改动，我们通过这个视图可以观察到，但是无法通过这个视图对原映射做出修改。
 - 
